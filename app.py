@@ -38,7 +38,7 @@ def keep_alive():
     while True:
         try:
             # Send a request to your Flask application's URL to keep it alive
-            requests.get('https://your-app-url.onrender.com')
+            requests.get('https://flask-application-89oz.onrender.com')
         except Exception as e:
             print(f"Keep-alive request failed: {e}")
         # Wait for 1 minute
