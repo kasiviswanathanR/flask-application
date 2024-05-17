@@ -1,4 +1,7 @@
 import os
+import threading
+import time
+import requests
 import google.generativeai as genai
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -30,6 +33,16 @@ def ask_question():
 
     # Return the response to the frontend
     return jsonify({"answer": response_text}), 200
+
+def keep_alive():
+    while True:
+        try:
+            # Send a request to your Flask application's URL to keep it alive
+            requests.get('https://your-app-url.onrender.com')
+        except Exception as e:
+            print(f"Keep-alive request failed: {e}")
+        # Wait for 1 minute
+        time.sleep(60)
 
 if __name__ == "__main__":
     app.run(debug=True)
