@@ -4,3 +4,4 @@ langchain-google-genai
 google
 flask-cors
 Gunicorn
+requests
