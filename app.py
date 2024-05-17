@@ -45,4 +45,6 @@ def keep_alive():
         time.sleep(60)
 
 if __name__ == "__main__":
+    keep_alive_thread = threading.Thread(target=keep_alive)
+    keep_alive_thread.start()
     app.run(debug=True)
